@@ -6,5 +6,8 @@ echo "/etc/squid/squid.conf IN_MODIFY /usr/sbin/squid -k reconfigure" > /etc/inc
 # Start listener for Squid config file
 incrond
 
+# Grant squid user access to stdout to write logs
+chown squid.squid /dev/stdout
+
 # Run the Squid Proxy service
 /usr/sbin/squid -N
