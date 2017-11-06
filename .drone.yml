@@ -8,7 +8,7 @@ pipeline:
       - DOCKER_HOST=tcp://172.17.0.1:2375
     commands:
       - docker login -u="ukhomeofficedigital+drone_docker_squidproxy" -p="$${DOCKER_PASSWORD}" quay.io
-      - docker build -t squidproxy:$${DRONE_COMMIT_SHA} .
+      - docker build -t squidproxy:$${DRONE_COMMIT_SHA} . --no-cache
 
   latest_image_to_quay:
     image: docker:17.07.0
