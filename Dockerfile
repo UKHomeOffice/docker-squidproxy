@@ -1,4 +1,4 @@
-FROM alpine:3.6
+FROM alpine:edge
 
 # Expose port to listen on
 EXPOSE 3128/tcp
