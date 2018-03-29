@@ -21,10 +21,10 @@ RUN chmod 755 /sbin/entrypoint.sh
 RUN chown squid.squid /dev/stdout
 
 # Add proxy non-privileged user to use
-RUN adduser -G squid -S proxy
+RUN adduser -G squid -S -u 1000 proxy
 
 # Switch to proxy user
-USER proxy
+USER 1000
 
 # Start the service
 CMD ["/sbin/entrypoint.sh"]
